@@ -19,7 +19,7 @@ try:
     # Get the final price
     final_price = calculate_discount(original_price, discount)
 
-    # Print result
+    # Print results
     if discount >= 20:
         print(f"The final price after {discount}% discount is: {final_price:.2f}")
     else:

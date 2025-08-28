@@ -1,0 +1,32 @@
+# Base Class
+class Smartphone:
+    def __init__(self, brand, model, storage):
+        self.brand = brand
+        self.model = model
+        self.storage = storage
+    
+    def call(self, number):
+        print(f"{self.brand} {self.model} is calling {number}...")
+
+    def install_app(self, app):
+        print(f"Installing {app} on {self.brand} {self.model}.")
+
+# Inherited Class
+class Smartwatch(Smartphone):  # Inheriting from Smartphone
+    def __init__(self, brand, model, storage, strap_color):
+        super().__init__(brand, model, storage)  # Call parent constructor
+        self.strap_color = strap_color
+    
+    # Overriding method (Polymorphism)
+    def call(self, number):
+        print(f"{self.brand} {self.model} smartwatch is making a hands-free call to {number}.")
+
+# Testing
+phone = Smartphone("Samsung", "Galaxy S23", "256GB")
+watch = Smartwatch("Apple", "Watch Series 9", "32GB", "Black")
+
+phone.call("0712345678")
+phone.install_app("WhatsApp")
+
+watch.call("0712345678")
+watch.install_app("Spotify")
